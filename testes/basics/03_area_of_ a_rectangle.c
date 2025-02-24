@@ -40,6 +40,4 @@ int main()
     //a funcao pode ser chamada dentro do printf porque dentro dela está retornando o resultado.
     printf("The value of the area of the rectangle: %d\n", area(11, 7));
     printf("\%% The value of the perimeter of the  rectangle: %.2f\n", perimeter(11, 7));
-
-    
 }
