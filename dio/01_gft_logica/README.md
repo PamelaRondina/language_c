@@ -73,3 +73,9 @@ ___________
 Assunto | Link
 |-|
 Desafio: Nível do Herói | [Link](https://web.dio.me/lab/classificador-de-nivel-de-heroi/learning/9c4e00f0-af71-410d-a468-93d2c1c0f1ac)
+
+Função:
+- Um bloco de código reutilizável que executa uma tarefa específica quando chamado.
+
+Parâmetros:
+- Valores que podem ser passados para a função quando ela é chamada e que permitem que a função realize operações com esses valores

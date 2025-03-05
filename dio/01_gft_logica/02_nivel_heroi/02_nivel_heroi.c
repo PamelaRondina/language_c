@@ -25,6 +25,7 @@ int main()
                 rank = "Imortal";
             else
                 rank = "Radiante";
+            
             printf("O Herói de nome %s está no nível %s\n", heroi, rank);
             return (0);
         }
