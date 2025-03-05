@@ -1,5 +1,4 @@
 //Crie uma função que leia ums string e a deixe ao contrário
-
 #include <stdio.h>
 
 void   ft_reverse_putstr(char *str)
