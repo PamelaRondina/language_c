@@ -2,14 +2,14 @@
 
 Projeto | . | Programa | . | Descrição | Escopo
 -|- | - | - |- |-
-C00 | 00 | ft_putchar | - |
+C00 | 00 | ft_putchar | OK | Função que mostre um caracter passado como parâmetro | `void ft_putchar(char c)`
 C00 | 01 | ft_print_alphabet | -|
 C00 | 02 | ft_print_reverse_alphabet | -|
 C00 | 03 | ft_print_numbers | -|
 C00 | 04 | ft_is_negative | -|
 C00 | 05 | ft_print_comb | -|
 C00 | 06 | ft_print_comb_2 | -|
-C00 | 07 | ft_putnbr | -|
+C00 | 07 | ft_putnbr | OK | Função que transforma número em char | `void ft_putnbr(int nb);`
 C00 | 08 | ft_combn | -|
 C01 | 00 | ft_ft | -|
 C01 | 01 | ft_ultimate_ft | -|

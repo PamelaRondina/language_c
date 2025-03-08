@@ -68,6 +68,15 @@ int main(void)
 }
  ```
 
+**Funções e Argumentos**
+
+Funções: pequenas ações para utilizar em nosso programa
+Argumentos: entradas para as funções.
+
+    ler_string(char *s);
+
+- Efeitos colaterais: impresso na tela;
+- Valores de retorno: um valor que é passado de volta ao nosso programa que podemos usar ou armazenar para mais tarde.
 
 
 
