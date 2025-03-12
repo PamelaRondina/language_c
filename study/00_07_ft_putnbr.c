@@ -32,7 +32,7 @@ void ft_putnbr(int nb)
 int main(void)
 {
     //1 --> menor número inteiro
-    /*ft_putnbr(-2147483648);
+    ft_putnbr(-2147483648);
     printf("\n");
 
     ft_putnbr(-2147483647);
@@ -42,7 +42,7 @@ int main(void)
     printf("\n");
     
     ft_putnbr(-147483648);
-    printf("\n");*/
+    printf("\n");
 
     ft_putnbr(42);
     printf("\n");
