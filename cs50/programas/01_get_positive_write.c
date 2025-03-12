@@ -18,7 +18,7 @@ int main()
         write(1, "Escolha outro número: \n", 23);
         scanf("%d", &n);
     }
-    write(1, "Seu número: ", 12);
+    write(1, "Seu número: ", 13);
     ft_putnbr(n);
 }
 
