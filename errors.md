@@ -82,7 +82,25 @@ int main(void)
 ```
 ------------------------
 
+## 02 Conversão implícita de tipos
 
+Atribuir um tipo de dado a outro tipo sem uma conversão explícita: entregar dois inteiros (como argumento) e esperar como retorno um float.
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int i = 50;
+    int j = 2;
+    float result;
+
+    result = (float) i / (float) j;
+    printf("%.2f\n", result);
+
+    return (0);
+}
+```
 
 ---------------------------------------
 
