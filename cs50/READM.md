@@ -53,9 +53,9 @@ Dentro dos computadores existem os **transitores**, que pode ser ligados e desli
 
 No terminal:
 
-`code hello.c`  -   criar um arquivo.c
-`make hello`    -   compilador, criar um arquivo executável para que o computador possa ler;
-`./hello`       - executa o programa.
+- `code hello.c`  -   criar um arquivo.c
+- `make hello`    -   compilador, criar um arquivo executável para que o computador possa ler;
+- `./hello`       - executa o programa.
 
  ```c
 #include <stdio.h>
