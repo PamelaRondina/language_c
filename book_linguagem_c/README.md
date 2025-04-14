@@ -1,7 +1,7 @@
 ## Capítulo II - Tipos de Dados Básicos
 
 Tipo | Descricao | Bytes | Valor 
--|-|-|
+-|-|-|-
 %hd | short int ou short | 2 | -32.768 até 32.767
 %d | int | 4 | -2.147.483.648 até 2.147.483.647
 %ld | long int ou long | |
@@ -12,7 +12,7 @@ Tipo | Descricao | Bytes | Valor
 
 **Caracteres especiais - tabela ASCII**
 Código | Descricao 
-|-|
+-|-
 \7 | Bell (sinal sonoro do computador)
 \a | Bell (sinal sonoro do computador)
 \b | BackSpace

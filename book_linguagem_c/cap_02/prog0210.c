@@ -2,7 +2,7 @@
 //receba um cararcter.
 //Imprima no terminal
 
-#include <stdio.h>
+#include "../include/teste_biblioteca.h"
 
 int main()
 {
@@ -10,5 +10,5 @@ int main()
 
     printf("Escolha um carácter: ");
     scanf("%c", &ch);
-    printf("O caracter escolhido foi: %c\n", ch);
+    ft_putchar(ch);
 }
