@@ -1,42 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prondina <prondina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 12:26:43 by prondina          #+#    #+#             */
-/*   Updated: 2025/04/14 17:39:42 by prondina         ###   ########.fr       */
+/*   Created: 2025/04/14 17:41:04 by prondina          #+#    #+#             */
+/*   Updated: 2025/04/15 14:43:44 by prondina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//ft que altera a string a partir da quantidade do size_t
-
-void *ft_memset(void *s, int c, size_t n)
+//Apaga os dados nos n bytes da memoria
+//comecando no local apontado por s
+//escrevendo 0
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*ptr;
-	size_t	i;
-
+	unsigned char *ptr;
+	int	i;
 	ptr = (unsigned char *)s;
+	
 	i = 0;
-	//((unsigned char *)s)[i] = '0'
-	while (i < n)
+	while(i < n)
 	{
-		ptr[i] = (unsigned char)c;
+		ptr[i] = 0;
 		i++;
 	}
-	return (s);
 }
 /*
 int	main()
 {
-	char teste[] = "Swim";
+	char teste[18] = "Continue a nadar!";
+	int i;
 
-	printf("%s\n", teste);
-	ft_memset(teste, 'A', 10);
-	printf("%s\n", teste);
-	memset(teste, 'A', 10);
-	printf("%s\n", teste);
+	i = 0;
+	printf("Antes do ft_bzero: %s\n", teste);
+	
+	ft_bzero(teste, 2);
+	
+	while (i < 18)
+	{
+		if (teste[i] == '\0')
+			printf("0");
+		else
+			printf("%c", teste[i]);
+		i++;
+	}
+	printf("\n");
+
+	bzero(teste, 2);
+
+	return(0);
 }*/
