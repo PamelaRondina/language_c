@@ -28,3 +28,12 @@ Código | Descricao
 \? | 
 \ooo | código ASCII em octal
 \xyy | código ASCII em hexadecimal
+
+**Operadores Logicos**
+Operador | Significado | Exemplo
+-|-|-
+&& | AND (E logico) | x>=1 && x<=19
+ | OR (OU logio) | x==1 x==2
+!|NOT(Negacao logica)|! Continuar
+
+&& = Verdadeiro quando ambas as condicoes sao verdadeiras;
