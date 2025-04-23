@@ -5,11 +5,12 @@
 #include <stdio.h>
 
 
-#include <string.h>
-#include <ctype.h>
-#include <string.h>
+# include <string.h>
+# include <ctype.h>
+# include <string.h>
 
-#include <stdlib.h>
+# include <stdlib.h>
+# include <limits.h>
 
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);

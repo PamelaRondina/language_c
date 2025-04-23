@@ -37,3 +37,12 @@ Operador | Significado | Exemplo
 !|NOT(Negacao logica)|! Continuar
 
 && = Verdadeiro quando ambas as condicoes sao verdadeiras;
+
+Operador|
+-|
+< <= > >=
+== !=
+&&
+||
+?: 
+
