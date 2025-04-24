@@ -1,42 +1,51 @@
+
 #include "libft.h"
 
 //retorna uma nova string que 'e uma subparte de s, comecando do indice 'start'
 //e com no maximo len caracteres
+
+// S: minha string
+//START: local onde quero copiar
+//LEN: o tamanho que quero copiar
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    size_t  len_s;
-    size_t  real_len;
-    char    *new_string;
-    
-    real_len = 0;
-    len_s = ft_strlen(s);
+	size_t	size_s;
+	size_t	i;
+	char	*new_string;
 
-    //1. Verificacao de entrada
+	i = 0;
+	//tamanho da string original
+	size_s = ft_strlen(s);
+
+	//1. Verificacao de entrada
 	if (!s) 
 		return (NULL);
 
-    //2. Tamanho da string s, 
-    // Duplica a string usando malloc, retorna para uma nova string vazia!
-	if (start >= len_s)
+	// Se o local que quero comecar a copiar [START] for >= ao tamanho da minha string Original 
+	// ft_strdup: recebe uma string e duplica para a mesma, com malloc. Preenche com vazio
+	if (start >= size_s)
 		return (ft_strdup(""));
 	
-    //3. calcular o real tamanho da string 
-    //while que copia quantos caracteres posso copiar
-    //nao ultrapassa o final da string (start + real_len < len_s)
-    //nem o maximo de caracteres pedidos (real_len < len)
-    while ((start + real_len < len_s) && (real_len < len))
-        real_len++;
+	//aqui que faz a copia!
+	// While (a posicao do local que quero copiar (START[i] < tamanho da string) && (0 (i) < o tamanho que quero copiar), 
+	//va para a proxia posicao, caminha pela string principal [s] ate achar o local que iniciara a copia
+	// nisso I sera crementado
+	while ((start + i < size_s) && (i < len))
+		i++;
 
     //alocar memoria para a nova string
-    new_string = malloc(real_len + 1);
-    if (!new_string)
-        return (NULL);
+	// + 1 . para receber o NULO '\0'
+	new_string = malloc(i + 1);
+	if (!new_string)
+		return (NULL);
 
-    //5. Copiar os caracteres para a nova string
-    ft_memcpy(new_string, s + start, real_len);
-    new_string[real_len] = '\0';
+    //Copiar os caracteres para a nova string
+	// memcpy(dst, src0 tamanho que sera copiado)
+	// nem_string = DEST, s + START [ponteiro aponta para a primeira posicao + onde deve iniciar a copia], quantidade que deve ser copiado
+	ft_memcpy(new_string, s + start, i);
+	new_string[i] = '\0';
 	
-    return (new_string);
+	return (new_string);
 }
 
 int main(void)
@@ -53,5 +62,6 @@ int main(void)
     }
     else
         printf("Erro ao criar substring!\n");
+	
     return (0);
 }
