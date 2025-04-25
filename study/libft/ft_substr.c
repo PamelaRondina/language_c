@@ -14,28 +14,32 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*new_string;
 
 	i = 0;
-	//tamanho da string original
-	size_s = ft_strlen(s);
-
-	//1. Verificacao de entrada
+		//1. Verificacao de entrada
 	if (!s) 
 		return (NULL);
+	
+	//tamanho da string original
+	size_s = ft_strlen(s);
 
 	// Se o local que quero comecar a copiar [START] for >= ao tamanho da minha string Original 
 	// ft_strdup: recebe uma string e duplica para a mesma, com malloc. Preenche com vazio
 	if (start >= size_s)
 		return (ft_strdup(""));
+		// return (malloc(0));   FAZ O MESMO?????
 	
 	//aqui que faz a copia!
 	// While (a posicao do local que quero copiar (START[i] < tamanho da string) && (0 (i) < o tamanho que quero copiar), 
-	//va para a proxia posicao, caminha pela string principal [s] ate achar o local que iniciara a copia
+	//va para a proxia posicao, caminha pela string principal [s] ate achar o local que encerarra a copia
 	// nisso I sera crementado
+	//[i] utilizado para saber o final da string para incluir o '\0'
+
+	//Verificacao para descobrir se o len esta correto!
 	while ((start + i < size_s) && (i < len))
 		i++;
 
     //alocar memoria para a nova string
 	// + 1 . para receber o NULO '\0'
-	new_string = malloc(i + 1);
+	new_string = malloc((i + 1) * sizeof(char));
 	if (!new_string)
 		return (NULL);
 

@@ -45,7 +45,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	
 	return (new_string);
 }
-
+/*
 int main(void)
 {
     char *original = "abcdefg";
@@ -62,4 +62,4 @@ int main(void)
         printf("Erro ao criar substring!\n");
 	
     return (0);
-}
+}*/
