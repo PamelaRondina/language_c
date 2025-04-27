@@ -33,16 +33,25 @@
 Ordem | Função | Dificuldade | Resumo rápido
 OK - 1 | ft_putchar_fd | Muito fácil | Escreve um único caractere no file descriptor.
 OK - 2 | ft_putstr_fd | Muito fácil | Escreve uma string no file descriptor.
-3 | ft_putendl_fd | Fácil | Escreve a string seguida de uma quebra de linha.
-4 | ft_putnbr_fd | Fácil | Escreve um número inteiro no file descriptor.
-5 | ft_strmapi | Médio | Aplica uma função a cada caractere de uma string nova.
-6 | ft_striteri | Médio | Aplica uma função a cada caractere modificando a string original.
-7 | ft_substr | Médio | Recorta uma parte da string a partir de um índice, com no máximo len caracteres.
-8 | ft_strjoin | Médio | Junta duas strings em uma nova.
-9 | ft_strtrim | Médio-difícil | Remove caracteres do início e fim da string conforme o set.
+3 - OK | ft_putendl_fd | Fácil | Escreve a string seguida de uma quebra de linha.
+4 - OK | ft_putnbr_fd | Fácil | Escreve um número inteiro no file descriptor.
+5 - OK| ft_strmapi | Médio | Aplica uma função a cada caractere de uma string nova.
+6 - OK | ft_striteri | Médio | Aplica uma função a cada caractere modificando a string original.
+7 - OK | ft_substr | Médio | Recorta uma parte da string a partir de um índice, com no máximo len caracteres.
+8 - OK | ft_strjoin | Médio | Junta duas strings em uma nova.
+9 - OK| ft_strtrim | Médio-difícil | Remove caracteres do início e fim da string conforme o set.
 10 | ft_itoa | Difícil | Converte um número em string.
 11 | ft_split | Mais difícil | Separa uma string em várias, usando um delimitador.
 
+**Funções com Ponteiros**
+
+> char (*f)(unsigned int, char)
+
+Parte |	Significado
+-|-
+char|	O tipo de retorno da função: ela devolve um char.
+(*f)|	f é um ponteiro para função.
+(unsigned int, char)|	A função recebe dois parâmetros: primeiro um unsigned int, depois um char.
 
 **File Descriptor | Arquivos abertos**
 
@@ -53,4 +62,6 @@ ls --> listar todos os arquivos | numeros sao diretorios de processos (PID)
 cat cmdline --> visualizar o comando utilizado pelo programa
 cd fd ls --> listar os files descriptor 
 ls -l (qualquer numero) --> dados do arquivo
+
+
 

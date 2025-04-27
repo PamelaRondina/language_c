@@ -1,5 +1,6 @@
 #include "libft.h"
 
+// char para int
 int ft_atoi(const char *nptr)
 {
    int  i;
@@ -24,7 +25,7 @@ int ft_atoi(const char *nptr)
     }
     return (num * pn);
 }
-
+/*
 int main()
 {
     char a[] = "    ---+--+123ab567";
@@ -33,3 +34,4 @@ int main()
     printf("%d\n", ft_atoi(b));
     printf("%d\n", atoi(b));
 }
+    */

@@ -31,7 +31,7 @@ int main(void)
     printf("%s", ft_strnstr(b, l, 6));
 }*/
 
-
+/*
 int main(void)
 {
     const char *big = "abcde";
@@ -45,4 +45,4 @@ int main(void)
         printf("Não encontrado!\n");
 
     return 0;
-}
+}*/

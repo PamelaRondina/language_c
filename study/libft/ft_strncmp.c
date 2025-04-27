@@ -14,7 +14,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
     }
     return (0);
 }
-
+/*
 int main()
 {
 printf("Comparando 'banana' e 'banal' com n = 4: %d\n", ft_strncmp("banana", "banal", 4));  // deve dar 0
@@ -26,4 +26,4 @@ printf("Comparando 'banana' e 'banal' com n = 4: %d\n", strncmp("banana", "banal
 printf("Comparando 'banana' e 'banal' com n = 5: %d\n", strncmp("banana", "banal", 5));  // deve ser positivo
 printf("Comparando 'abacate' e 'abelha' com n = 3: %d\n", strncmp("abacate", "abelha", 3));  // deve dar 0
 printf("Comparando 'abacate' e 'abelha' com n = 4: %d\n", strncmp("abacate", "abelha", 4));  // deve ser negativo
-}
+}*/
