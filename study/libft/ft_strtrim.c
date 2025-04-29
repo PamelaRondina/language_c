@@ -38,14 +38,14 @@ char    *ft_strtrim(char const *s1, char const *set)
     //????????? Precisa pular os caracteres especiaos??
     //9 a 13 e 32
 }
-
+/*
 int main(void)
 {
     char *str = "He   Hello, world!   He";
     char *result = ft_strtrim(str, "He");
     printf("Resultado: '%s'\n", result);  // Deve imprimir "Hello, world!"
     free(result);
-}
+}*/
 
 
 /*
