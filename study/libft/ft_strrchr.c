@@ -1,41 +1,29 @@
 #include "libft.h"
-
-// Retorna a última ocorrência encontrada
-char *ft_strrchr(const char *s, int c)
+//  encontrar a ultima ocorrência de um caractere específico em uma string.
+char	*ft_strrchr(const char *s, int c)
 {
-    unsigned int i;
-    char *result;
+	unsigned int	i;
+	char			character;
+	char			*last;
 
-    i = 0;
-    result = '\0';
-
-    // Percorrer a string até o final
-    while (s[i]) 
-    {
-        if (s[i] == (char)c) 
-            result = (char *)(s + i);  // Atualiza a última ocorrência
-        i++;  // Avança para o próximo caractere
-    }
-
-    // Verifica se o caractere c é o '\0' (final da string)
-    if (c == '\0' && s[i] == '\0') 
-        result = (char *)(s + i);  // Retorna o ponteiro para o final da string
-    return (result);  // Retorna a última ocorrência encontrada
+	character = (unsigned char) c;
+	i = 0;
+	last = NULL;
+	while (s[i] != '\0')
+	{
+		if (s[i] == character)
+			last = ((char *) &s[i]);
+		i++;
+	}
+	if (s[i] == '\0' && character == '\0')
+		last = ((char *) &s[i]);
+	return (last);
 }
-/*
-int main(void) 
-{
-    const char *str = "Continue a Nadar!";
-    char c = 'N';
-    
-    char *result = ft_strrchr(str, c);
-    
-    if (result) {
-        printf("Última ocorrência de '%c': %s\n", c, result);
-    } else {
-        printf("Caractere '%c' não encontrado.\n", c);
-    }
 
-    return 0;
-}
-*/
+// int main(void)
+// {
+//     char teste[] = "Nadar e Nadar...";
+//     char teste1[] = "Nadar a Nadar...";
+//     printf("%s\n", ft_strrchr(teste, 'a'));
+//     printf("%s\n", strrchr(teste, 'a'));
+// }
