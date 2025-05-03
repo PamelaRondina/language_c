@@ -4,7 +4,7 @@
 # define LIBFT_H
 
 # include <stdio.h>
-# include <bsd/string.h>
+//# include <bsd/string.h>
 # include <string.h>
 # include <strings.h>
 # include <ctype.h>

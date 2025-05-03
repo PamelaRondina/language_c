@@ -3,13 +3,13 @@
 //recebe uma string e divide ela em um array de strings
 //possui um caracter delimitador
 
-// analisar quantas inicios de palabras s possui!
+// analisar quantas inicios de palaVras s possui!
 static size_t	ft_count(const char *s, char c)
 {
 	size_t	count;
 	size_t	i;
 
-	count = 0; //contar as palabras
+	count = 0; //contar as palavras
 	i = 0; // index para percorrer a string
 	while (s[i]) //enquanto nao chegar no fim da string
 	{
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (word);
 }
-
+/*
 int main (void)
 {
     char *s = "oi tudo bem ";
@@ -98,6 +98,7 @@ int main (void)
     while (*teste)
         printf("%s\n", *teste++);
 }
+		*/
 /*
 
 FT_COUNT COM S[i]

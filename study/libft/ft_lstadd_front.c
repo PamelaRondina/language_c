@@ -1,5 +1,9 @@
 #include "libft.h"
 
+// adicionar um nó no início da lista
+// ponteiro para a lista original (**lst)
+//um novo nó (t_list *new)
+
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 		new->next = *lst;
@@ -7,11 +11,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 }
 
 /*
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	new->next = *lst;
-	*lst = new; 
-}
 
 void	ft_print_list(t_list *lst)
 {
@@ -58,7 +57,7 @@ int main(int argc, char **argv)
 		node = ft_lstnew(argv[i]);
 		ft_lstadd_front(&lst, node);
 		i++;
-/*
+
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
@@ -117,4 +116,4 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	//(*banana).content; == banana->content; (ptr)
 	//teste.next			acessar a variavel na struct (.)
 	//node == struct 
-	*/
+*/

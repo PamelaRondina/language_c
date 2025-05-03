@@ -25,8 +25,18 @@
 | `ft_atoi`     | `int ft_atoi(const char *str);`                                           | Número inteiro (`int`)         | Converte uma string para número inteiro                                 |
 | `ft_calloc`   | `void *ft_calloc(size_t nmemb, size_t size);`                             | Ponteiro para memória alocada  | Aloca memória zerada para `nmemb * size` bytes                          |
 | `ft_strdup`   | `char *ft_strdup(const char *s);`                                         | Ponteiro para nova string      | Duplica a string usando malloc                                          |
-
-
+| **Funções Bônus** | ******   | ************                 | ************   
+| Função           | Assinatura                                                                 | Retorno                 | O que faz                                                                 |
+|------------------|----------------------------------------------------------------------------|--------------------------|---------------------------------------------------------------------------|
+| `ft_lstnew`      | `t_list *ft_lstnew(void *content)`                                         | `t_list *`               | Cria um novo nó com o conteúdo dado e `next = NULL`                      |
+| `ft_lstadd_front`| `void ft_lstadd_front(t_list **lst, t_list *new)`                          | `void`                   | Adiciona o nó `new` no começo da lista                                   |
+| `ft_lstsize`     | `int ft_lstsize(t_list *lst)`                                              | `int`                    | Retorna o número de nós na lista                                         |
+| `ft_lstlast`     | `t_list *ft_lstlast(t_list *lst)`                                          | `t_list *`               | Retorna o último nó da lista                                             |
+| `ft_lstadd_back` | `void ft_lstadd_back(t_list **lst, t_list *new)`                           | `void`                   | Adiciona o nó `new` no final da lista                                    |
+| `ft_lstdelone`   | `void ft_lstdelone(t_list *lst, void (*del)(void *))`                      | `void`                   | Libera a memória de um nó usando a função `del`                         |
+| `ft_lstclear`    | `void ft_lstclear(t_list **lst, void (*del)(void *))`                      | `void`                   | Libera todos os nós da lista, usando `del` em cada um                   |
+| `ft_lstiter`     | `void ft_lstiter(t_list *lst, void (*f)(void *))`                          | `void`                   | Aplica a função `f` ao conteúdo de cada nó                              |
+| `ft_lstmap`      | `t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))`  | `t_list *`               | Cria nova lista aplicando `f` a cada conteúdo, com segurança via `del` |
 
 
 
@@ -40,8 +50,8 @@ OK - 2 | ft_putstr_fd | Muito fácil | Escreve uma string no file descriptor.
 7 - OK | ft_substr | Médio | Recorta uma parte da string a partir de um índice, com no máximo len caracteres.
 8 - OK | ft_strjoin | Médio | Junta duas strings em uma nova.
 9 - OK| ft_strtrim | Médio-difícil | Remove caracteres do início e fim da string conforme o set.
-10 | ft_itoa | Difícil | Converte um número em string.
-11 | ft_split | Mais difícil | Separa uma string em várias, usando um delimitador.
+10 -  | ft_itoa | Difícil | Converte um número em string.
+11 -  | ft_split | Mais difícil | Separa uma string em várias, usando um delimitador.
 
 **Funções com Ponteiros**
 
@@ -62,6 +72,3 @@ ls --> listar todos os arquivos | numeros sao diretorios de processos (PID)
 cat cmdline --> visualizar o comando utilizado pelo programa
 cd fd ls --> listar os files descriptor 
 ls -l (qualquer numero) --> dados do arquivo
-
-
-

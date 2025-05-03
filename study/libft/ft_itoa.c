@@ -9,8 +9,7 @@ static int ft_size_int(long n)
     int size;
 
     size = 0;
-    //aqui nao entra, pois se for 0, strdup resolve no itoa!!
-    if (n == 0)
+    if (n == 0) //aqui nao entra, pois se for 0, strdup resolve no itoa!!
         return (1);
     if (n < 0) //adicionar uma posicao caso seja negativo
     {
@@ -34,7 +33,6 @@ static long ft_test(long n)
         nbr = -nbr; 
     return (nbr);
 }
-
 
 char *ft_itoa(int n)
 {
