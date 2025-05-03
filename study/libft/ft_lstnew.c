@@ -1,8 +1,6 @@
 
 #include "libft.h"
 
-//criar um novo nó (new_node) da lista
-
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
@@ -10,10 +8,8 @@ t_list	*ft_lstnew(void *content)
 	new_node = malloc(sizeof(t_list)); //persista, que continue na memoria ate o free.
 	if (!new_node)
 		return (NULL);
-
 	new_node->content = content;
 	new_node->next = NULL;
-
 	return(new_node);
 }
 /*
@@ -31,7 +27,7 @@ int main(int argc, char **argv)
 
 	if (node)
 	{
-		printf("Conteudo guardadi no nó: %s\n", (char *)node->content);
+		printf("Conteudo guardado no nó: %s\n", (char *)node->content);
 		printf("O proximo nó é: %p (deve ser NULL)\n", node->next);
 	}
 	else
@@ -39,5 +35,4 @@ int main(int argc, char **argv)
 	
 	free(node);
 	return (0);
-}
-	*/
+}*/

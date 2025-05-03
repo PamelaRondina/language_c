@@ -10,10 +10,16 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		*lst = new; 
 }
 /*
+static void del(void *ptr)
+{
+	free(ptr);
+}
+
 int main (int argc, char **argv)
 {
 	t_list *new;
 	t_list *list;
+	t_list *ptr;
 	int i;
 	
 	if (argc < 2)
@@ -22,21 +28,27 @@ int main (int argc, char **argv)
 			return (1);
 		}
 		
-
 	i = 1;
 	list = NULL; //variavel inicializada, sem puxar valor de lixo de memoria
-		while (i < argc)
+
+	while (i < argc)
 	{
 		new = ft_lstnew(argv[i]);
-		ft_lstadd_front(&list, new);
+		ft_lstadd_front(&list, new); //adicionado o primeiro no na lista
 		i++;
 	}
-	while(list)
+
+	ptr = list; 
+
+	while(ptr)
 	{
-		printf("%s ", (char *)list->content);
-		list = list->next;
+		printf("%s ", (char *)ptr->content);
+		ptr = ptr->next;
 	}
-	ft_lstclear(&list, free);
+	list = ptr;
+	
+	ft_lstclear(&list, free);	
+	
 	return (0);
 }
 */
