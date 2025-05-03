@@ -1,10 +1,10 @@
 #include "libft.h"
-/*
+
 //deleta qualquer tipo de dado
 static void del(void *ptr)
 {
     free(ptr);
-}*/
+}
 
 //deletar um único nó
 void ft_lstdelone(t_list *lst, void (*del)(void*))

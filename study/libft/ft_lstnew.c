@@ -23,8 +23,8 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		printf("%s", node);
-		return (1)
+		printf("%s", argv[0]);
+		return (1);
 	}
 
 	node = ft_lstnew(argv[1]);
@@ -39,4 +39,5 @@ int main(int argc, char **argv)
 	
 	free(node);
 	return (0);
-}*/
+}
+	*/

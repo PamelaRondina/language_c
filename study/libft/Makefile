@@ -35,8 +35,6 @@ $(DIR_OBJ)/%.o: %.c $(HEADER)
 bonus: $(OBJ_BONUS) $(NAME)
 	ar -rcs $(NAME) $(OBJ_BONUS)
 
-
-
 clean:
 	rm -rf $(DIR_OBJ) $(OBJ_BONUS)
 #diretorio rm -rf
