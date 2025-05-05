@@ -5,14 +5,14 @@
 //Copia n bytes tratando sobreposição
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *ptr_dest;
-	unsigned char *ptr_src;
-	size_t i;
+	unsigned char	*ptr_dest;
+	unsigned char	*ptr_src;
+	size_t			i;
 
 	if (dest == src)
 		return (dest);
-	ptr_dest = (unsigned char*) dest;
-	ptr_src = (unsigned char *) src;
+	ptr_dest = (unsigned char *)dest;
+	ptr_src = (unsigned char *)src;
 	i = 0;
 
 	if (ptr_dest > ptr_src)
@@ -23,10 +23,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			ptr_dest[i - 1] = ptr_src[i -1];
 			i--;
 		}
-	} 
-	else 
+	}
+	else
 		memcpy(dest, src, n);
-	return(dest);
+	return (dest);
 }
 /*
 int	main()

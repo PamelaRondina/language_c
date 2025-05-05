@@ -2,10 +2,10 @@
 #include "libft.h"
 
 //Preenche os n primeiros bytes de s com o valor c
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*ptr;
-	size_t	i;
+	size_t			i;
 
 	ptr = (unsigned char *)s;
 	i = 0;
