@@ -1,6 +1,7 @@
 
 #include "libft.h"
 
+//Copia n bytes de src para dest (sem tratar sobreposição)
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*ptr_dest;
@@ -15,33 +16,42 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		ptr_dest[i] = ptr_src[i];
 		i++;
 	}
-	return (ptr_dest);
+	return (dest);
 }
 
-// int	main()
-// {
-	// int source1[5] = {1, 2, 3, 4, 5};
-	// int source[0];
-	// int i arr[i]);= 0;
+// memcpy é indefinido com NULL, mesmo se n == 0
+/*
+int main ()
+{
+	char dest[10];
 
-	// memcpy(NULL, NULL, 3 * sizeof(int));
-	//printf("%s\n", memcpy(NULL, NULL, 3 * sizeof(int)));
-	//printf("%s\n", NULL);
-	//for (i = 0; i < 5; i++)
-	//	printf("%d\t", source1[i]);
-// }
+	//ft_memcpy(NULL, "abc", 3); // Erro: tentando escrever em NULL
+	//memcpy(NULL, "abc", 3); 	//compila com warning
 
-// int main(void)
-// {
-// 	char dest[25];
-// 	char *src = "Continue a Nadar!";
-// 	ft_memcpy(dest, src, 4);
-// 	printf("dest: %s\n", dest);
-// }
+	//ft_memcpy(dest, NULL, 3);   // Erro: tentando ler de NULL
+	//memcpy(dest, NULL, 3);      //compila com warning
 
-// int main(void)
-// {
-// 	//printf("memcpy -> %s\n", memcpy(NULL, NULL, 2));
-// 	printf("my memcpy -> |%s|\n", ft_memcpy("ola", NULL, 0));
-// 	printf("memcpy -> |%s|\n", memcpy("ola", NULL, 0));
-// }
+	ft_memcpy(dest, "abc", 0);   
+	memcpy(dest, "abc", 0);      
+
+}
+/*
+/*	
+ int	main(void)
+{
+	char src[] = "Nadar";
+	char dest1[10];
+	char dest2[10];
+
+	ft_memcpy(dest1, src, 0);
+	memcpy(dest2, src, 0);
+
+	//dest1[5] = '\0';
+	//dest2[5] = '\0';
+
+	printf("my memcpy -> |%s|\n", dest1);
+	printf("memcpy    -> |%s|\n", dest2);
+
+	return (0);
+}
+*/

@@ -1,9 +1,10 @@
 #include "libft.h"
 
+//Converte para minúscula se c for maiúsculo
 int	ft_tolower(int c)
 {
 	if ((c >= 'A') && (c <= 'Z'))
-		return (c + 32);
+		c += 32;
 	return (c);
 }
 // int main(void)

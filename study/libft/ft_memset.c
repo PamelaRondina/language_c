@@ -1,8 +1,7 @@
 
 #include "libft.h"
 
-//ft que altera a string a partir da quantidade do size_t
-
+//Preenche os n primeiros bytes de s com o valor c
 void *ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*ptr;
@@ -10,7 +9,6 @@ void *ft_memset(void *s, int c, size_t n)
 
 	ptr = (unsigned char *)s;
 	i = 0;
-	//((unsigned char *)s)[i] = '0'
 	while (i < n)
 	{
 		ptr[i] = (unsigned char)c;
@@ -21,11 +19,17 @@ void *ft_memset(void *s, int c, size_t n)
 /*
 int	main()
 {
-	char teste[] = "Swim";
+	char *buffer = malloc(10 * sizeof(char));
+	if (!buffer)
+		return (1);
 
-	printf("%s\n", teste);
-	ft_memset(teste, 'A', 10);
-	printf("%s\n", teste);
-	memset(teste, 'A', 10);
-	printf("%s\n", teste);
+	printf("Antes do Teste: %s\n", buffer); //um alloc e free mais (printf)
+	ft_memset(buffer, 130, 9);
+	//memset(buffer, 'A', 9);
+	buffer[9] = '\0';
+
+	printf("Depois do Teste: %s\n", buffer);
+
+	free(buffer);
+	return (0);
 }*/

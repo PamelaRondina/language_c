@@ -1,15 +1,13 @@
 
 #include "libft.h"
 
-//Apaga os dados nos n bytes da memoria
-//comecando no local apontado por s
-//escrevendo 0
+// Zera os n primeiros bytes da memória (=menset)
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char *ptr;
 	size_t	i;
+
 	ptr = (unsigned char *)s;
-	
 	i = 0;
 	while(i < n)
 	{
@@ -26,7 +24,7 @@ int	main()
 	i = 0;
 	printf("Antes do ft_bzero: %s\n", teste);
 	
-	ft_bzero(teste, 2);
+	ft_bzero(teste, 2); //00ntinue a nadar!
 	
 	while (i < 18)
 	{

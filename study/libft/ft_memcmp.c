@@ -1,6 +1,6 @@
 #include "libft.h"
 
-//duas áreas de memória (dois blocos de bytes), e quer saber se são iguais ou diferentes, comparando até N bytes.
+//Compara os n primeiros bytes de duas regiões de memória
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
     unsigned char   *ptr_s1;
@@ -47,5 +47,5 @@ int main(void) {
     printf("Resultado original: %d\n", memcmp(test1, test4, 4));
     printf("Resultado minha versão: %d\n\n", ft_memcmp(test1, test4, 4));
 
-    return 0;
+    return (0);
 }*/
