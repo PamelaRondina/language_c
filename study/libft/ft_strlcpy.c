@@ -1,7 +1,7 @@
 
 #include "libft.h"
 
-//copia uma src para buffer de dest, com um limite de tamanho (size)
+//src para buffer de dest, com um limite de tamanho (size), add \0
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	len_src;
@@ -22,15 +22,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 /*
 int	main()
 {
-	const char source[] = "abcdef";
-	char dest[] = "";
+	const char source[10] = "";
+	char dest[] = "oi";
 
-	printf("ft_strlcpy: %zu\n", ft_strlcpy(dest, source, 5));
+	printf("ft_strlcpy: %zu\n", ft_strlcpy(dest, source, sizeof(source));
 	printf("dest: %s\n", dest);
 
-	printf("strlcpy: %zu\n", strlcpy(dest, source, 5));
-	printf("dest: %s\n", dest);
-}*/
+	// printf("strlcpy: %zu\n", strlcpy(dest, source, 5));
+	// printf("dest: %s\n", dest);
+}
+*/
 /*
 int main()
 {

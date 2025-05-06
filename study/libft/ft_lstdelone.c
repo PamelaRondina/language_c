@@ -12,7 +12,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 		return ;
 	}
 }
-
+/*
 //deleta qualquer tipo de dado
 static void del(void *ptr)
 {
@@ -51,4 +51,4 @@ int main (void)
 	ft_lstclear(&list, del);
 	
 	return (0);
-}
+}*/
