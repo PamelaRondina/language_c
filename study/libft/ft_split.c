@@ -1,43 +1,42 @@
 #include "libft.h"
 
-//recebe uma string e divide ela em um array de strings
-//possui um caracter delimitador
+//Divide `s` em array de strings separadas pelo caractere `c
 
-// analisar quantas inicios de palaVras s possui!
+//Receber a string s e contar quantas 'letras' possui
+//Palavra = sequência de caracteres que não são o c, separados por c.
+//s = "--oi--tudo--bem--", total palavras 3;
 static size_t	ft_count(const char *s, char c)
 {
-	size_t	count;
 	size_t	i;
+	size_t	count;
 
-	count = 0; //contar as palavras
-	i = 0; // index para percorrer a string
-	while (s[i]) //enquanto nao chegar no fim da string
+	i = 0;
+	count = 0;
+	while (s[i])		//whilw nao estamos no fim da string, continue
 	{
-		while (s[i] == c) // caminha o index se encontrar caracter
+		while (s[i] == c) //caracter igual, continua a caminhar na string 
 			i++;
-		if (s[i] != c && s[i]) // se encontrar uma palavra, aumenta count
-		{
-			count++; //palavra encontrada
-			while (s[i] && s[i] != c) // se nao encontrar caracter, avança index!
-				i++;
-		}
+		if (s[i]) //depois de pular o caracter, verifica se tem algo
+			count++; //incrementa word
+		while (s[i] && s[i] != c) //avança ate encontrar o proximo caracter
+			i++;
 	}
 	return (count);
 }
 
 //alocar memoria para cada palavra 
 //se falahar, libera todos os anteriores
-static int	ft_malloc_great(char **word, int position, size_t buffer)
+static int	ft_malloc_great(char **words, int position, size_t len)
 {
 	int	i;
 
-	i = 0;
-	word[position] = malloc(buffer); //aloca espaco para a string na posicao atual
-	if (NULL == word[position]) //se falhar
+	i = 0; //percorrer e liberar a string se der erro.
+	words[position] = malloc(len); //aloca espaco para a string na posicao atual
+	if (words[position] == NULL) //se falhar
 	{
 		while (i < position) //libera todas as alocacoes anteriores
-			free(word[i++]);
-		free(word); //libera o proprio array de ponteiros
+			free(words[i++]);
+		free(words); //libera o proprio array de ponteiros
 		return (1); //sinaliza erro
 	}
 	return (0); //sinaliza sucesso
@@ -45,10 +44,10 @@ static int	ft_malloc_great(char **word, int position, size_t buffer)
 //preenche o array com as palavras separadas
 //returna 0 se malloc correr bem, caso contrario, retorna 1
 //percorre s, extrai cada palavra, aloca memoria e copia
-static int	ft_fill(char **arr, char const *s, char c)
+static int	ft_fill(char **words, const char *s, char c)
 {
-	size_t	len;
-	int		i;
+	size_t	len; //conta o tamanho da palavra atual
+	int		i; //indice do array, onde a proxima palavra sera colocada
 
 	i = 0;
 	while (*s)
@@ -61,12 +60,12 @@ static int	ft_fill(char **arr, char const *s, char c)
 			++len;
 			++s;
 		}
-		if (len) //se achou a palavra, tenta copiar
+		if (len > 0) //se achou a palavra, tenta copiar
 		{
-			if (ft_malloc_great(arr, i, len + 1)) //aloca espaco (+1 para '\0'
+			if (ft_malloc_great(words, i, len + 1)) //aloca espaco (+1 para '\0'
 				return (1);
-				//s - len, aponta para o inicio da palavra atual, pq s ja foi incrementado len vezes durante o loop
-			ft_strlcpy(arr[i], s - len, len + 1); //copia a palavra para o novo espaco
+			//s - len, aponta para o inicio de s (pq s ja foi incrementado len vezes durante o loop)
+			ft_strlcpy(words[i], s - len, len + 1); //copia a palavra para o novo espaco
 			++i;
 		}
 	}
@@ -76,29 +75,29 @@ static int	ft_fill(char **arr, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	size_t	size_s;  //tamanho de string que recebo
-	char	**word; // o array com cada string
+	char	**words; // o array com cada string
 
 	if (!s) //verifica se a string existe
 		return (NULL);
 
 	size_s = ft_count(s, c); // conta quantas palavras existem!
-	word = malloc((size_s + 1) * sizeof(char *)); //alocar memoria, um array de ptr para cada palavra
-	word[size_s] = NULL;
-	if (ft_fill(word, s, c)) //copiar toda a string na posicao correta
+	words = malloc((size_s + 1) * sizeof(char *)); //alocar memoria, um array de ptr para cada palavra
+	words[size_s] = NULL;
+	if (ft_fill(words, s, c)) //copiar toda a string na posicao correta
 		return (NULL);
-	return (word);
+	return (words);
 }
-/*
-int main (void)
-{
-    char *s = "oi tudo bem ";
-    
-    char **teste = ft_split(s, ' ');
 
-    while (*teste)
-        printf("%s\n", *teste++);
-}
-		*/
+// int main (void)
+// {
+//     char *s = "oi tudo bem ";
+    
+//     char **teste = ft_split(s, ' ');
+
+//     while (*teste)
+//         printf("%s\n", *teste++);
+// }
+
 /*
 
 FT_COUNT COM S[i]
@@ -123,3 +122,74 @@ static size_t  ft_count(const char *s, char c)
 	return (count);
 }
 */
+
+//s = "--oi--tudo--bem--", total palavras 3;
+// static size_t	ft_count(const char *s, char c)
+// {
+// 	size_t	i;
+// 	size_t	count;
+
+// 	i = 0;
+// 	count = 0;
+// 	while (s[i])		
+// 	{
+// 		while (s[i] == c) 
+// 			i++;
+// 		if (s[i]) 
+// 			count++; 
+// 		while (s[i] && s[i] != c) 
+// 			i++;
+// 	}
+// 	return (count);
+// }
+
+//alocar memoria para cada palavra 
+//se falahar, libera todos os anteriores
+// static int	ft_malloc_great(char **word, int position, size_t len)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	word[position] = malloc(len);
+// 	if (word[position] == NULL)
+// 	{
+// 		while (i < position) 
+// 			free(word[i++]);
+// 		free(word); 
+// 		return (1);
+// 	}
+// 	return (0);
+// }
+
+//preenche o array com as palavras separadas
+//returna 0 se malloc correr bem, caso contrario, retorna 1
+//percorre s, extrai cada palavra, aloca memoria e copia
+// static int	ft_fill(char **words, const char *s, char c)
+// {
+// 	size_t	len;
+// 	int		i;
+
+// 	i = 0;
+// 	while (*s)
+// 	{
+// 		len = 0;
+// 		while (*s == c && *s)
+// 			++s;
+// 		while (*s != c && *s)
+// 		{
+// 			++len;
+// 			++s;
+// 		}
+// 		if (len > 0)
+// 		{
+// 			if (ft_malloc_great(words, i, len + 1))
+// 				return (1);
+// 			ft_strlcpy(words[i], s - len, len + 1);
+// 			++i;
+// 		}
+// 	}
+// 	return (0);
+// }
+
+
+//Divide `s` em array de strings separadas pelo caractere `c

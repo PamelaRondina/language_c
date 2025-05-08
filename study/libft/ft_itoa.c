@@ -8,10 +8,7 @@ static int ft_size_int(long n)
 {
     int size;
 
-    size = 0;
-    if (n == 0) //aqui nao entra, pois se for 0, strdup resolve no itoa!!
-        return (1);
-    if (n < 0) //adicionar uma posicao caso seja negativo
+    if (n < 0) //adicionar uma posicao caso seja negativo (para adicionar -)
     {
         size++;
         n *= -1; //passado o numero para positivo
@@ -24,7 +21,7 @@ static int ft_size_int(long n)
 	return (size);
 }
 
-static long ft_test(long n)
+static long ft_test_number(long n)
 {
     long nbr;
     
@@ -48,7 +45,7 @@ char *ft_itoa(int n)
     if (n == 0)
         return ft_strdup("0");
     
-    nbr = ft_test(n);
+    nbr = ft_test_number(n);
     size_str = ft_size_int(n);
    
     //Alocar memoria
@@ -77,7 +74,7 @@ char *ft_itoa(int n)
     //8) Retornar a strinf
     return (new_string);
 }
-/*
+
 int main(void)
 {
     int numbers[] = {0, 1, -1, 42, -42, 2147483647, -2147483648};
@@ -97,4 +94,10 @@ int main(void)
         i++;
     }
     return 0;
-}*/
+}
+// int main()
+// {
+//     int i = 0;
+
+//     printf("%s: itoa", ft_itoa(i));
+// }
