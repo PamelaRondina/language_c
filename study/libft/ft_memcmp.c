@@ -1,6 +1,7 @@
 #include "libft.h"
 
 //Compara os n primeiros bytes de duas regiões de memória
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ptr_s1;
@@ -18,6 +19,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
 /*
 int main(void) {
     // Teste 1: Comparando dois buffers idênticos

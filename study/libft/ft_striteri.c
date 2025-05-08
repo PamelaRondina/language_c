@@ -19,7 +19,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
     // para quem chamou, sem retornar valor nenhum (sai da função!)
     // Proteção → Evita erro de segmentação (famoso SegFault).
     if (!s || !f)
-        return;
+        return ;
 
     i = 0;
     while (s[i])
@@ -35,7 +35,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
 /*
 //Funcao nao deve retornar nada, semelhante a funcao da atividade
 // se nao retorna nada, fazemos conforme abaixo!
-void ft_test_toupper(unsigned int i, char *c)
+static void ft_test_toupper(unsigned int i, char *c)
 {
     (void)i; //ignorar o indice
     if (*c >= 'a' && *c <= 'z')

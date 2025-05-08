@@ -12,6 +12,8 @@
 # include <limits.h>
 # include <unistd.h>
 # include <fcntl.h> //open 
+# include <stddef.h>
+# include <stdint.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

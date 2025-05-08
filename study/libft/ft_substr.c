@@ -1,12 +1,7 @@
 
 #include "libft.h"
 
-//retorna uma nova string que 'e uma subparte de s, comecando do indice 'start'
-//e com no maximo len caracteres
-
-// S: minha string
-//START: local onde quero copiar
-//LEN: o tamanho que quero copiar
+//Cria uma substring a partir da posição start (0), com até len caracteres
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	size_s;
@@ -14,19 +9,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*new_string;
 
 	i = 0;
-		//1. Verificacao de entrada
+		//Verificacao de entrada
 	if (!s) 
 		return (NULL);
 	
-	//tamanho da string original
+		//tamanho da string original
 	size_s = ft_strlen(s);
 
-	// Se o local que quero comecar a copiar [START] for >= ao tamanho da minha string Original 
-	// ft_strdup: recebe uma string e duplica para a mesma, com malloc. Preenche com vazio
+		// Se o local que quero comecar a copiar [START] for >= ao tamanho da minha string Original 
+		// ft_strdup: recebe uma string e duplica para a mesma, com malloc. Preenche com vazio
 	if (start >= size_s)
 		return (ft_strdup(""));
-		// return (malloc(0));   FAZ O MESMO?????
-	
+			
 	//aqui que faz a copia!
 	// While (a posicao do local que quero copiar (START[i] < tamanho da string) && (0 (i) < o tamanho que quero copiar), 
 	//va para a proxia posicao, caminha pela string principal [s] ate achar o local que encerarra a copia
@@ -46,7 +40,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
     //Copiar os caracteres para a nova string
 	// memcpy(dst, src0 tamanho que sera copiado)
 	// nem_string = DEST, s + START [ponteiro aponta para a primeira posicao + onde deve iniciar a copia], quantidade que deve ser copiado
-	ft_memcpy(new_string, s + start, i);
+	ft_memcpy(new_string, (s + start), i);
 	new_string[i] = '\0';
 	
 	return (new_string);
@@ -54,10 +48,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*
 int main(void)
 {
-    char *original = "abcdefg";
+    char *original = "0123456789";
     char *sub;
 
-    sub = ft_substr(original, 2, 3); //Retorno: "cde"
+    sub = ft_substr(original, 0, 3); //Retorno: "012"
 
     if(sub)
     {
@@ -68,4 +62,27 @@ int main(void)
         printf("Erro ao criar substring!\n");
 	
     return (0);
-}*/
+}
+*/
+
+// char	*ft_substr(char const *s, unsigned int start, size_t len)
+// {
+// 	size_t	size_s;
+// 	size_t	i;
+// 	char	*new_string;
+
+// 	if (!s) 
+// 		return (NULL);
+// 	size_s = ft_strlen(s);
+// 	if (start >= size_s)
+// 		return (ft_strdup(""));
+// 	i = 0;
+// 	while ((start + i < size_s) && (i < len))
+// 		i++;
+// 	new_string = malloc((i + 1) * sizeof(char));
+// 	if (!new_string)
+// 		return (NULL);
+// 	ft_memcpy(new_string, (s + start), i);
+// 	new_string[i] = '\0';
+// 	return (new_string);
+// }

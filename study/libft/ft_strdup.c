@@ -1,19 +1,18 @@
 #include "libft.h"
 
+//Duplica a string usando malloc
 char	*ft_strdup(const char *src)
 {
 	int		size;
 	int		i;
 	char	*dup;
 
-	size = 0;
-	while (src[size] != '\0')
-		size++;
-	dup = (char *)malloc(sizeof(char) * (size + 1));
+	size = ft_strlen(src);
+	dup = malloc(sizeof(char) * (size + 1));
 	if (!dup)
 		return(NULL);
 	i = 0;
-	while (src[i] != '\0')
+	while (src[i])
 	{
 		dup[i] = src[i];
 		i++;
@@ -25,12 +24,22 @@ char	*ft_strdup(const char *src)
 int	main(void)
 {
 	char test[] = "Continue a nadar...";
-	char *copy;
+	char *copy_original;
+	char *copy_minhaft;
 
-	copy = ft_strdup(test);
+	copy_original = strdup(test);
+	
+	printf("Teste: %s\n", test);
+	printf("Cópia: %s\n", copy_original);
+	printf("\n");
+
+	copy_minhaft = ft_strdup(test);
 
 	printf("Teste: %s\n", test);
-	printf("Cópia: %s\n", copy);
+	printf("Cópia: %s\n", copy_minhaft);
+
+	free(copy_original);
+	free(copy_minhaft);
 
 	return (0);
 }*/
