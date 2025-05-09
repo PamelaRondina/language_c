@@ -9,8 +9,6 @@
     // Um ponteiro para o caractere (char *) → para poder modificar esse caractere.
 
 
-    //NAS FUNCOES QUE NAO RETORNAM NADA TEREMOS QUE FAZER O TESTE??
-    //ela recebe o endereço (char *)
 void ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
     unsigned int i;
@@ -26,7 +24,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
     {
         //ao inves de atribuir
         //s[i] = f(i, s[i]);
-        //só chamamos: i [o dindice atual] | 
+        //só chamamos: i [o indice atual] | 
         // O endereço do caractere atual (&s[i]), para que a função possa modificar diretamente a letra.
         f(i, &s[i]);
         i++;
@@ -56,3 +54,17 @@ int main(void)
 
     return (0);
 }*/
+
+// void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+// {
+// 	int	i;
+
+// 	if (!s || !f)
+// 		return ;
+// 	i = 0;
+// 	while (s[i])
+// 	{
+// 		f(i, &s[i]);
+// 		i++;
+// 	}
+// }

@@ -71,7 +71,7 @@ int main(void)
 // 	size_t	i;
 // 	char	*new_string;
 
-// 	if (!s) 
+// 	if (!s)
 // 		return (NULL);
 // 	size_s = ft_strlen(s);
 // 	if (start >= size_s)

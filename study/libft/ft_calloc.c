@@ -20,7 +20,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		//malloc aloca os bytes,a memoria vem com lixo,valores aleatorios da RAM
 	ptr = malloc(nmemb * size);
 	if (!ptr)
-		return (NULL);
+		return (NUL//Aloca memória zerada para nmemb * size bytes
+			//e garante que toda essa memoria esteja zerada, zera todos os bytes alocadosL);
 		//zerar a memoria alocada, utilizando funcao bzero
 	ft_bzero(ptr, (nmemb * size));
 		//retornar o ponteiro

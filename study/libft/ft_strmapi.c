@@ -4,30 +4,26 @@
 // Pode alterar, transformar, ou mudar completamente os caracteres!
 //Não altera a original. (Só cria nova.)
 
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    int size_s;
-    unsigned int i;
-    char *new_string;
+	int				size_s;
+	unsigned int	i;
+	char			*new_string;
 
-    if (!s || !f)
-    return (NULL);
-
-    size_s = ft_strlen(s);
-
-    new_string =  malloc((size_s + 1) * sizeof(char));
-    if (!new_string)
-        return(NULL);
-
-    i = 0;
-    while (s[i] != '\0')
-    {
-        new_string[i] = f(i, s[i]);
-        i++;
-    }
-    new_string[i] = '\0';
-
-    return (new_string);
+	if (!s || !f)
+		return (NULL);
+	size_s = ft_strlen(s);
+	new_string = malloc((size_s + 1) * sizeof(char));
+	if (!new_string)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		new_string[i] = f(i, s[i]);
+		i++;
+	}
+	new_string[i] = '\0';
+	return (new_string);
 }
 /*
 //Para que a funcao funcione precisa ter outra funcao com o mesmo parametro

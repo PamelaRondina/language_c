@@ -67,35 +67,3 @@ int main(void)
 //     new_string = ft_substr(s1, start, end - start + 1);
 //     return (new_string);
 // }
-
-// char    *ft_strtrim(char const *s1, char const *set)
-// {
-//     int     start;
-//     int     end;
-//     char    *new_string;
-
-//     if (!s1 || !set)
-//         return (NULL);
-
-//     start = 0;
-//         // Encontrar o início da nova string (o primeiro caractere de s1 que não está em set)
-//         // Enquanto ft_strchr(SET, Caractere de s1 estiver em SET), prossiga!
-//         //Vai apontar para a primeira posicao de S1 que nao tenha o SET
-//     while (s1[start] && ft_strchr(set, s1[start]))
-//         start++;
-
-//         // Se a string estiver vazia após a remoção dos caracteres de 'set'
-//     if (s1[start] == '\0')
-//         return (ft_strdup(""));
-    
-//         // Localizar o final da string
-//     end = ft_strlen(s1);
-//     while (end > start && ft_strchr(set, s1[end - 1])) // Verifica do final para o começo
-//         end--;
-    
-//     // Criar a nova string, alocar memória para ela
-//     new_string = ft_substr(s1, start, end - start);
-//     // ???????????????????????
-//     //Nao preciso verificar se deu erro de alocacao de memoria, pois em ft_substring ja faz isso!
-//     return (new_string);
-// }

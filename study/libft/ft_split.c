@@ -82,9 +82,11 @@ char	**ft_split(char const *s, char c)
 
 	size_s = ft_count(s, c); // conta quantas palavras existem!
 	words = malloc((size_s + 1) * sizeof(char *)); //alocar memoria, um array de ptr para cada palavra
-	words[size_s] = NULL;
+	if (!words)
+		return (NULL);
 	if (ft_fill(words, s, c)) //copiar toda a string na posicao correta
 		return (NULL);
+	words[size_s] = NULL;
 	return (words);
 }
 
@@ -193,3 +195,90 @@ static size_t  ft_count(const char *s, char c)
 
 
 //Divide `s` em array de strings separadas pelo caractere `c
+
+char **ft_split(char const *s, char c);
+
+void print_split(char **result)
+{
+	int i = 0;
+	if (!result)
+	{
+		printf("Resultado: NULL\n");
+		return;
+	}
+	while (result[i])
+	{
+		printf("Palavra %d: \"%s\"\n", i, result[i]);
+		i++;
+	}
+}
+
+// 🚀 TESTE 1: String comum
+// Esperado: ["ola", "mundo"]
+void test1() {
+	printf("\nTeste 1:\n");
+	char **res = ft_split("ola mundo", ' ');
+	print_split(res);
+}
+
+// 🚀 TESTE 2: Vários separadores juntos
+// Esperado: ["eu", "amo", "c"]
+void test2() {
+	printf("\nTeste 2:\n");
+	char **res = ft_split("eu  amo   c", ' ');
+	print_split(res);
+}
+
+// 🚀 TESTE 3: Começa e termina com delimitador
+// Esperado: ["oi", "tudo", "bem"]
+void test3() {
+	printf("\nTeste 3:\n");
+	char **res = ft_split("  oi tudo bem  ", ' ');
+	print_split(res);
+}
+
+// 🚀 TESTE 4: Apenas delimitadores
+// Esperado: []
+void test4() {
+	printf("\nTeste 4:\n");
+	char **res = ft_split("     ", ' ');
+	print_split(res);
+}
+
+// 🚀 TESTE 5: String vazia
+// Esperado: []
+void test5() {
+	printf("\nTeste 5:\n");
+	char **res = ft_split("", ' ');
+	print_split(res);
+}
+
+// 🚀 TESTE 6: NULL como entrada
+// Esperado: NULL
+void test6() {
+	printf("\nTeste 6:\n");
+	char **res = ft_split(NULL, ' ');
+	print_split(res);
+}
+
+// 🚀 TESTE 7: Outro delimitador
+// Esperado: ["banana", "abacate", "melancia"]
+void test7() {
+	printf("\nTeste 7:\n");
+	char **res = ft_split("banana,abacate,melancia", ',');
+	print_split(res);
+}
+
+int main(void)
+{
+	test1();
+	test2();
+	test3();
+	test4();
+	test5();
+	test6();
+	test7();
+	return (0);
+
+	//ADICIONAR FREE EM CADA TESTE!!!!
+}
