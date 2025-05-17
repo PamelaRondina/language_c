@@ -95,9 +95,9 @@ int main (void)
 
 	write(1, "--------> Teste 04: '%d%s%', 10, 'oi''\n", 39);
 	write(1, "APENAS O PRINTF FUNCIONARNDO!!\n", 31);
-	// int len8 = ft_printf("%d%s%", i, s);				//teste
-	// ft_printf("\nResult is: %d\n", len8);				//contagem tamanho	
-	// write(1, "\n", 1);								//quebra de linha
+	int len8 = ft_printf("%d%s%", i, s);				//teste
+	ft_printf("\nResult is: %d\n", len8);				//contagem tamanho	
+	write(1, "\n", 1);								//quebra de linha
 	int len9 = printf("%d%s%", i, s);					//teste
 	printf("\nResult is: %d\n", len9);					//contagem tamanho	
 	write(1, "\n", 1);									//quebra de linha
