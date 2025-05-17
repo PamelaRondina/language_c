@@ -1,4 +1,4 @@
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
 //print %c
 int	ft_putchar(int c)
@@ -20,13 +20,13 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-//print size printf
+//print size printf (para testes)
 int	ft_strlen(const char *str)
 {
-	int count;
-	
+	int	count;
+
 	count = 0;
-	while(str[count])
+	while (str[count])
 		count++;
 	return (count);
 }
