@@ -1,8 +1,10 @@
-// escreva um programa que indique qual é o numero de bytes de um inteiro
+// escreva um programa que indique qual é o 'tamanho de bytes de um int'
 
 #include <stdio.h> //printf
 
 int main(void)
 {
-    printf("O valor do int: %ld.\n", sizeof(int));
+    printf("O tamanho de bytes de um int = %ld\n", sizeof(int));
 }
+
+// O tamanho de bytes de um int = 4

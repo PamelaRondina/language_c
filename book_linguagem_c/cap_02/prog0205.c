@@ -1,5 +1,4 @@
-// Escreva um programa que indique qual o numero de
-// bytes que ocupam todos os tipos basicos em C
+// Escreva um programa que indique qual o numero de bytes que ocupam todos os tipos basicos em C
 
 #include <stdio.h>
 
@@ -11,3 +10,9 @@ int main(void)
     printf("double: %lu\n", sizeof(double));
     printf("long: \t%lu\n", sizeof(long));
 }
+
+// int:    4
+// char:   1
+// float:  4
+// double: 8
+// long:   8
