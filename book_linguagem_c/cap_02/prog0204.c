@@ -1,4 +1,4 @@
-// escreva um programa que indique qual é o numero de bytes de um inteiro
+// escreva um programa que indique qual é o numero de bytes de um inteira
 
 #include <stdio.h>
 
