@@ -1,3 +1,33 @@
+## Capítulo I - O meu primeiro programa
+
+**Caracteres especiais - tabela ASCII**
+
+Código | Descricao 
+-|-
+\7 | Bell (sinal sonoro do computador)
+\a | Bell (sinal sonoro do computador)
+\b | BackSpace
+\n | Nem line
+\r | Carriage Return
+\t | Tabulaçao Horizontal
+\v | Tabulaçao Vertical
+\\ | o proprio \
+\\' | Aspas simples
+\\" |
+\\? | 
+\ooo | código ASCII em octal
+%% | %
+/* Comentários */ |Comentários
+
+**Resumo Capítulo I**
+
+- Um programa inicia com `main()`, e deve estar em todas os programas em C;
+- Um `bloco` é formado e delimitado por um conjunto de `{}`;
+- Cada instrução eeve ser seguida por `;`;
+- Linhas iniciadas por `#` não são C, enão necesitam do `;` no final;
+- Para imprimir ou utilizar caracter especial, no iníxio incluit `\`;
+  Para comentário utilizar `/* texto */`, e nao existe comentário dentro de comentário.
+
 ## Capítulo II - Tipos de Dados Básicos
 
 Tipo | Descricao | Bytes | Valor 
@@ -12,22 +42,7 @@ Tipo | Descricao | Bytes | Valor
 %f ou %e ou %E | double | 8 | | 
 %c | char | 1 | caracteres possiveis 256, possui 8 bits 
 
-**Caracteres especiais - tabela ASCII**
-Código | Descricao 
--|-
-\7 | Bell (sinal sonoro do computador)
-\a | Bell (sinal sonoro do computador)
-\b | BackSpace
-\n | Nem line
-\r | Carriage Return
-\t | Tabulaçao Horizontal
-\v | Tabulaçao Vertical
-\\ | o proprio \
-\' | Aspas simples
-\" |
-\? | 
-\ooo | código ASCII em octal
-\xyy | código ASCII em hexadecimal
+
 
 **Operadores Logicos**
 Operador | Significado | Exemplo
